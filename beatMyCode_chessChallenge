@@ -1,0 +1,19 @@
+public class MainClass{
+    
+    string zero = "white";
+    string one = "black";
+    
+    ArrayList<ArrayList<Short>> chessBoardArray = new ArrayList<ArrayList<Short>>;
+    
+    public String buildTheBoard(String columnsAndRows){
+        
+        int columns = Integer.parseInt(pColumns);
+        int rows = Integer.parseInt(pRows);
+        
+        
+    }
+    
+    public static void main(String[] args){
+        System.out.println("test");
+    }
+};
