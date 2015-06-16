@@ -1,32 +1,49 @@
-public class MainClass{
-   
-   static String white = "0";
+/**
+ * "Replace with class summary"
+ * <p>
+ * Created - Jun 16, 2015
+ * @author Eric Linderman
+ * <p>
+ * <table border cellspacing=0 cellpadding=5>
+ * <tr><th colspan=4>Modification History</th></tr>
+ * <tr><th>Initials</th><th>Date</th><th>Method</th><th>Modification Description</th></tr>
+ * <tr><td>C031</td><td>Jun 16, 2015</td><td>N/A</td><td>New Class</td></tr>
+ * </table>
+ */
+public class MainClass {
+
+	static String white = "0";
    static String black = "1";
+   static String newLine = "\n";
    
    public static String buildTheBoard(String pColumnsAndRows){	        
-   	String[] columnsAndRows = pColumnsAndRows.split(",");
-      int columns = Integer.parseInt(columnsAndRows[0]);
-      int rows = Integer.parseInt(columnsAndRows[1]);
-      String[][] chessBoard = new String[columns][rows];
-      
+		String[] columnsAndRows = pColumnsAndRows.split(",");
+	   int columns = Integer.parseInt(columnsAndRows[0]);
+	   int rows = Integer.parseInt(columnsAndRows[1]);
+	   String[][] chessBoard = new String[columns + 1][rows + 1];
+	   StringBuilder myBuilder = new StringBuilder();
      if (columns < 1 || rows < 1){
    	  return "";
      }
-     for(int iRows = 0; iRows < rows; iRows++){
-   	  for(int iColumns = 0; iColumns < columns; iColumns++){
+     for(int iRows = 0; iRows <= rows; iRows++){
+   	  for(int iColumns = 0; iColumns <= columns; iColumns++){
    		  if(iColumns + iRows == 0){
    			  chessBoard[iColumns][iRows] = white;
+   			  myBuilder.append(white);
+   		  }else if(iColumns + iRows % 2 == 0 && iColumns != columns){
+   			  myBuilder.append(white);
    		  }
-   		  if(iColumns + iRows % 2 == 0 && iColumns != columns){
-   			  chessBoard[iColumns][iRows] = white;
-   	     }else if(iColumns != columns){
+   		  else if(iColumns != columns){
    	   	  chessBoard[iColumns][iRows] = black;
+   	   	  myBuilder.append(black);
    	     }else{
-   	   	  chessBoard[iColumns][iRows] = "/n";
-   	     }
+   	   	  chessBoard[iColumns][iRows] = newLine;
+   	   	  myBuilder.append(newLine);
+   	     }   		  
    	  }
-     }      
-     return chessBoard.toString();
+     }  
+     
+     return myBuilder.toString();
    }
    
    public static void main(String[] args){
