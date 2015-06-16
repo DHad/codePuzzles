@@ -1,9 +1,9 @@
 public class MainClass{
    
-   String zero = "white";
-   String one = "black";
+   static String white = "0";
+   static String black = "1";
    
-   public String buildTheBoard(String pColumnsAndRows){	        
+   public static String buildTheBoard(String pColumnsAndRows){	        
    	String[] columnsAndRows = pColumnsAndRows.split(",");
       int columns = Integer.parseInt(columnsAndRows[0]);
       int rows = Integer.parseInt(columnsAndRows[1]);
@@ -12,20 +12,24 @@ public class MainClass{
      if (columns < 1 || rows < 1){
    	  return "";
      }
-     for(int j = 0; j < rows; j++){
-   	  for(int i = 0; i < columns; i++){
-   	  
+     for(int iRows = 0; iRows < rows; iRows++){
+   	  for(int iColumns = 0; iColumns < columns; iColumns++){
+   		  if(iColumns + iRows == 0){
+   			  chessBoard[iColumns][iRows] = white;
+   		  }
+   		  if(iColumns + iRows % 2 == 0 && iColumns != columns){
+   			  chessBoard[iColumns][iRows] = white;
+   	     }else if(iColumns != columns){
+   	   	  chessBoard[iColumns][iRows] = black;
+   	     }else{
+   	   	  chessBoard[iColumns][iRows] = "/n";
+   	     }
    	  }
-     }
-     if(columns + rows % 2 == 0){
-   	  
-     }
-      
-      
-      return "";
+     }      
+     return chessBoard.toString();
    }
    
    public static void main(String[] args){
-       System.out.println("test");
+       System.out.println(buildTheBoard("7,4"));
    }
 }
