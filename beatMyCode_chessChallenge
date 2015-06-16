@@ -1,19 +1,31 @@
 public class MainClass{
-    
-    string zero = "white";
-    string one = "black";
-    
-    ArrayList<ArrayList<Short>> chessBoardArray = new ArrayList<ArrayList<Short>>;
-    
-    public String buildTheBoard(String columnsAndRows){
-        
-        int columns = Integer.parseInt(pColumns);
-        int rows = Integer.parseInt(pRows);
-        
-        
-    }
-    
-    public static void main(String[] args){
-        System.out.println("test");
-    }
-};
+   
+   String zero = "white";
+   String one = "black";
+   
+   public String buildTheBoard(String pColumnsAndRows){	        
+   	String[] columnsAndRows = pColumnsAndRows.split(",");
+      int columns = Integer.parseInt(columnsAndRows[0]);
+      int rows = Integer.parseInt(columnsAndRows[1]);
+      String[][] chessBoard = new String[columns][rows];
+      
+     if (columns < 1 || rows < 1){
+   	  return "";
+     }
+     for(int j = 0; j < rows; j++){
+   	  for(int i = 0; i < columns; i++){
+   	  
+   	  }
+     }
+     if(columns + rows % 2 == 0){
+   	  
+     }
+      
+      
+      return "";
+   }
+   
+   public static void main(String[] args){
+       System.out.println("test");
+   }
+}
