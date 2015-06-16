@@ -1,15 +1,3 @@
-/**
- * "Replace with class summary"
- * <p>
- * Created - Jun 16, 2015
- * @author Eric Linderman
- * <p>
- * <table border cellspacing=0 cellpadding=5>
- * <tr><th colspan=4>Modification History</th></tr>
- * <tr><th>Initials</th><th>Date</th><th>Method</th><th>Modification Description</th></tr>
- * <tr><td>C031</td><td>Jun 16, 2015</td><td>N/A</td><td>New Class</td></tr>
- * </table>
- */
 public class MainClass {
 
 	static String white = "0";
