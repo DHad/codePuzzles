@@ -13,19 +13,15 @@ public class MainClass {
      if (columns < 1 || rows < 1){
    	  return "";
      }
-     for(int iRows = 0; iRows <= rows; iRows++){
+     for(int iRows = 0; iRows < rows; iRows++){
    	  for(int iColumns = 0; iColumns <= columns; iColumns++){
-   		  if(iColumns + iRows == 0){
-   			  chessBoard[iColumns][iRows] = white;
+   		  if(iColumns + iRows == 0 || (iColumns == 0 && iRows % 2 == 0)){
    			  myBuilder.append(white);
-   		  }else if(iColumns + iRows % 2 == 0 && iColumns != columns){
+   		  }else if((iColumns + iRows) % 2 == 0 && iColumns != columns){
    			  myBuilder.append(white);
-   		  }
-   		  else if(iColumns != columns){
-   	   	  chessBoard[iColumns][iRows] = black;
+   		  }else if(iColumns != columns){
    	   	  myBuilder.append(black);
    	     }else{
-   	   	  chessBoard[iColumns][iRows] = newLine;
    	   	  myBuilder.append(newLine);
    	     }   		  
    	  }
@@ -35,6 +31,6 @@ public class MainClass {
    }
    
    public static void main(String[] args){
-       System.out.println(buildTheBoard("7,4"));
+       System.out.println(buildTheBoard("0,1"));
    }
 }
